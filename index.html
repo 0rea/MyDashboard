@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Life Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-mark">M</div>
+
+            <div>
+                <div class="logo-title">
+                    My Life
+                </div>
+
+                <div class="logo-subtitle">
+                    Dashboard
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="calendar"
+            >
+                <span>▣</span>
+                Calendar
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="goals"
+            >
+                <span>🎯</span>
+                Goals
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="tasks"
+            >
+                <span>✓</span>
+                Tasks
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="progress"
+            >
+                <span>◔</span>
+                Progress
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="settings"
+            >
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-profile">
+
+                <div class="profile-avatar">
+                    R
+                </div>
+
+                <div>
+                    <div class="profile-name">
+                        My Life
+                    </div>
+
+                    <div class="profile-status">
+                        Personal Dashboard
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================================= -->
+    <!-- MAIN -->
+    <!-- ========================================= -->
+
+    <main class="main">
+
+
+        <!-- ===================================== -->
+        <!-- HEADER -->
+        <!-- ===================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="topbar-label">
+                    PERSONAL LIFE MANAGEMENT
+                </div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-date">
+
+                <div
+                    id="todayDate"
+                    class="today-date"
+                >
+                    -
+                </div>
+
+                <div
+                    id="todayDay"
+                    class="today-day"
+                >
+                    -
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ===================================== -->
+        <!-- DASHBOARD SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="dashboardSection"
+            class="page-section active"
+        >
+
+
+            <!-- TODAY HERO -->
+
+            <div class="hero-card">
+
+                <div>
+
+                    <div class="hero-label">
+                        TODAY
+                    </div>
+
+                    <h2 id="dashboardGreeting">
+                        Good day 👋
+                    </h2>
+
+                    <p id="dashboardDateText">
+                        Let's make today count.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-focus">
+
+                    <div class="focus-label">
+                        CURRENT FOCUS
+                    </div>
+
+                    <div id="currentFocus">
+                        ยังไม่มีงานที่ต้องโฟกัส
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- OVERVIEW -->
+
+            <div class="section-title">
+                Overview
+            </div>
+
+            <div class="overview-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+                        <div class="stat-label">
+                            Main Goals
+                        </div>
+
+                        <div
+                            id="goalCount"
+                            class="stat-value"
+                        >
+                            0
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <div class="stat-label">
+                            Tasks Today
+                        </div>
+
+                        <div
+                            id="taskCount"
+                            class="stat-value"
+                        >
+                            0
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <div class="stat-label">
+                            Completed
+                        </div>
+
+                        <div
+                            id="completedCount"
+                            class="stat-value"
+                        >
+                            0
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📈
+                    </div>
+
+                    <div>
+                        <div class="stat-label">
+                            Overall Progress
+                        </div>
+
+                        <div
+                            id="overallProgress"
+                            class="stat-value"
+                        >
+                            0%
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DASHBOARD GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- TODAY FOCUS -->
+
+                <div class="card focus-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <div class="card-kicker">
+                                PRIORITY
+                            </div>
+
+                            <h3>
+                                Today's Focus
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="focusList"
+                        class="focus-list"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- UPCOMING -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <div class="card-kicker">
+                                UPCOMING
+                            </div>
+
+                            <h3>
+                                Upcoming
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="small-button"
+                            onclick="showSection('calendar')"
+                        >
+                            Calendar
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="upcomingList"
+                        class="upcoming-list"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOWER GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- TASKS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <div class="card-kicker">
+                                TODAY
+                            </div>
+
+                            <h3>
+                                Today's Tasks
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="add-button"
+                            onclick="showTaskForm()"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="taskForm"
+                        class="inline-form hidden"
+                    >
+
+                        <input
+                            id="taskTitleInput"
+                            type="text"
+                            placeholder="What needs to be done?"
+                        >
+
+                        <input
+                            id="taskDateInput"
+                            type="date"
+                        >
+
+                        <input
+                            id="taskTimeInput"
+                            type="time"
+                        >
+
+                        <select id="taskPriorityInput">
+
+                            <option value="high">
+                                High Priority
+                            </option>
+
+                            <option
+                                value="medium"
+                                selected
+                            >
+                                Medium Priority
+                            </option>
+
+                            <option value="low">
+                                Low Priority
+                            </option>
+
+                        </select>
+
+                        <div class="form-actions">
+
+                            <button
+                                class="primary-button"
+                                onclick="addTask()"
+                            >
+                                Add Task
+                            </button>
+
+                            <button
+                                class="secondary-button"
+                                onclick="hideTaskForm()"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="taskList"
+                        class="task-list"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- GOALS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <div class="card-kicker">
+                                LONG TERM
+                            </div>
+
+                            <h3>
+                                Goals
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="add-button"
+                            onclick="showGoalForm()"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="goalForm"
+                        class="inline-form hidden"
+                    >
+
+                        <input
+                            id="goalTitleInput"
+                            type="text"
+                            placeholder="Goal name"
+                        >
+
+                        <div class="form-actions">
+
+                            <button
+                                class="primary-button"
+                                onclick="addGoal()"
+                            >
+                                Add Goal
+                            </button>
+
+                            <button
+                                class="secondary-button"
+                                onclick="hideGoalForm()"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="goalList"
+                        class="goal-list"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DAILY SCORE -->
+
+            <div class="card daily-score-card">
+
+                <div class="score-info">
+
+                    <div class="card-kicker">
+                        DAILY REVIEW
+                    </div>
+
+                    <h3>
+                        Today's Score
+                    </h3>
+
+                    <p>
+                        คะแนนเบื้องต้นจากการทำ Tasks วันนี้
+                    </p>
+
+                </div>
+
+                <div
+                    id="dailyScore"
+                    class="daily-score"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- CALENDAR SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="calendarSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="card-kicker">
+                        PLAN YOUR LIFE
+                    </div>
+
+                    <h2>
+                        Calendar
+                    </h2>
+
+                    <p>
+                        วางแผนสิ่งที่ต้องทำในแต่ละวัน
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showTaskForm()"
+                >
+                    + Add Task
+                </button>
+
+            </div>
+
+
+            <div class="calendar-layout">
+
+
+                <!-- CALENDAR -->
+
+                <div class="card calendar-card">
+
+                    <div class="calendar-header">
+
+                        <button
+                            class="calendar-nav"
+                            onclick="changeMonth(-1)"
+                        >
+                            ‹
+                        </button>
+
+                        <div
+                            id="calendarMonthTitle"
+                            class="calendar-month-title"
+                        >
+                            -
+                        </div>
+
+                        <button
+                            class="calendar-nav"
+                            onclick="changeMonth(1)"
+                        >
+                            ›
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="today-button"
+                        onclick="goToToday()"
+                    >
+                        Today
+                    </button>
+
+
+                    <div class="calendar-weekdays">
+
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
+
+                    </div>
+
+
+                    <div
+                        id="calendarGrid"
+                        class="calendar-grid"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- SELECTED DATE -->
+
+                <div class="card selected-day-card">
+
+                    <div class="card-kicker">
+                        SELECTED DAY
+                    </div>
+
+                    <h3
+                        id="selectedDateTitle"
+                    >
+                        -
+                    </h3>
+
+                    <div
+                        id="selectedDayTasks"
+                        class="selected-day-tasks"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- GOALS SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="goalsSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="card-kicker">
+                        LONG TERM
+                    </div>
+
+                    <h2>
+                        Goals
+                    </h2>
+
+                    <p>
+                        สิ่งที่คุณต้องการให้เกิดขึ้นในชีวิต
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showGoalForm()"
+                >
+                    + Add Goal
+                </button>
+
+            </div>
+
+
+            <div
+                id="allGoalsList"
+                class="goals-page-grid"
+            >
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- TASKS SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="tasksSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="card-kicker">
+                        ACTIONS
+                    </div>
+
+                    <h2>
+                        Tasks
+                    </h2>
+
+                    <p>
+                        งานทั้งหมดที่ต้องจัดการ
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showTaskForm()"
+                >
+                    + Add Task
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div
+                    id="allTasksList"
+                    class="all-tasks-list"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- PROGRESS SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="progressSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="card-kicker">
+                        ANALYTICS
+                    </div>
+
+                    <h2>
+                        Progress
+                    </h2>
+
+                    <p>
+                        ดูความคืบหน้าของชีวิตในภาพรวม
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-page-grid">
+
+                <div class="card">
+
+                    <div class="card-kicker">
+                        GOALS
+                    </div>
+
+                    <h3>
+                        Overall Goal Progress
+                    </h3>
+
+                    <div
+                        id="progressGoals"
+                        class="progress-goals"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-kicker">
+                        TODAY
+                    </div>
+
+                    <h3>
+                        Task Completion
+                    </h3>
+
+                    <div
+                        id="progressTaskSummary"
+                        class="progress-task-summary"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-chart-grid">
+
+                <div class="card chart-card">
+
+                    <div class="card-kicker">
+                        TODAY
+                    </div>
+
+                    <h3>
+                        Task Completion
+                    </h3>
+
+                    <div class="pie-chart-wrap">
+
+                        <div
+                            id="taskPieChart"
+                            class="pie-chart"
+                        >
+                            <div class="pie-chart-center">
+                                <strong id="taskPiePercent">0%</strong>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+
+                        <div
+                            id="taskPieLegend"
+                            class="chart-legend"
+                        >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card chart-card">
+
+                    <div class="card-kicker">
+                        LAST 7 DAYS
+                    </div>
+
+                    <h3>
+                        Task Activity
+                    </h3>
+
+                    <div
+                        id="taskBarChart"
+                        class="bar-chart"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================== -->
+        <!-- SETTINGS SECTION -->
+        <!-- ===================================== -->
+
+        <section
+            id="settingsSection"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="card-kicker">
+                        SYSTEM
+                    </div>
+
+                    <h2>
+                        Settings
+                    </h2>
+
+                    <p>
+                        ตั้งค่าระบบและจัดการข้อมูล
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card settings-card">
+
+                <h3>
+                    Data
+                </h3>
+
+                <p>
+                    สำรองข้อมูล Dashboard ของคุณเป็นไฟล์ JSON
+                </p>
+
+                <div class="settings-actions">
+
+                    <button
+                        class="primary-button"
+                        onclick="backupData()"
+                    >
+                        Export Backup
+                    </button>
+
+                    <label class="secondary-button file-button">
+
+                        Import Backup
+
+                        <input
+                            type="file"
+                            accept=".json"
+                            onchange="restoreData(event)"
+                        >
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- TASK DETAIL MODAL -->
+<!-- ========================================= -->
+
+<div
+    id="taskDetailModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="task-modal card">
+
+        <div class="task-modal-header">
+
+            <div>
+                <div class="card-kicker">TASK DETAIL</div>
+                <h3>Edit Task</h3>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close-button"
+                onclick="closeTaskDetails()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="task-modal-form">
+
+            <input
+                id="editTaskTitle"
+                type="text"
+                placeholder="Task title"
+            >
+
+            <div class="task-modal-grid">
+
+                <div>
+                    <label for="editTaskDate">Date</label>
+                    <input
+                        id="editTaskDate"
+                        type="date"
+                    >
+                </div>
+
+                <div>
+                    <label for="editTaskTime">Time</label>
+                    <input
+                        id="editTaskTime"
+                        type="time"
+                    >
+                </div>
+
+                <div>
+                    <label for="editTaskPriority">Priority</label>
+                    <select id="editTaskPriority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="editTaskStatus">Status</label>
+                    <select id="editTaskStatus">
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="editTaskGoal">Linked Goal</label>
+                    <select id="editTaskGoal">
+                        <option value="">No Goal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="editTaskDuration">Estimated Minutes</label>
+                    <input
+                        id="editTaskDuration"
+                        type="number"
+                        min="0"
+                        step="5"
+                        placeholder="e.g. 60"
+                    >
+                </div>
+
+            </div>
+
+            <div>
+                <label for="editTaskNote">Note</label>
+                <textarea
+                    id="editTaskNote"
+                    rows="4"
+                    placeholder="รายละเอียดเพิ่มเติม..."
+                ></textarea>
+            </div>
+
+            <div class="task-modal-actions">
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    onclick="deleteTaskFromDetails()"
+                >
+                    Delete Task
+                </button>
+
+                <div class="form-actions">
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="closeTaskDetails()"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        onclick="saveTaskDetails()"
+                    >
+                        Save Changes
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- SCRIPTS -->
+<!-- ========================================= -->
+
+<script src="js/storage.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
